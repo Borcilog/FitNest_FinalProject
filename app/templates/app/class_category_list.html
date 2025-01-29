@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% block content%}
+
+        <h1>Class Categories</h1>
+        <ul>
+          {% for category in categories %}
+                  <h2><a href="{% url 'class_category_detail' category.id %}">{{ category.name }}</a></h2>
+          {% endfor %}
+      </ul>
+{% endblock content %}

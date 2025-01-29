@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content%}
+{% if user.is_authenticated %}
+<p>Hi {{user.username}}</p>
+{% else %}
+<p>You're Not Logged In</p>
+{% endif %}
+    <img src="{% static 'images/Logo.png' %}"  alt="Description" class="responsive-image">
+{% endblock content %}

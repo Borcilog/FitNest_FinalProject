@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    <h1>Membership Plans</h1>
+    <ul>
+        {% for plan in plans %}
+                <h2>{{ plan.name }}</h2>
+                <p>{{ plan.description }}</p>
+                <p>Price: ₱{{ plan.price }}</p>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

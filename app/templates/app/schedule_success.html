@@ -1,0 +1,11 @@
+{%  extends 'app/base.html' %}
+{% load static %}
+{% block content%}
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <h1>Your session has been successfully scheduled!</h1>
+    <a href="{% url 'schedule' %}">Go back to the scheduling page</a>
+</body>
+{% endblock content %}

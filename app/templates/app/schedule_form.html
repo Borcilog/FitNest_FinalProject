@@ -1,0 +1,16 @@
+{%  extends 'app/base.html' %}
+{% load static %}
+{% block content%}
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <h1>Schedule Your Gym Session</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+{% endblock content %}

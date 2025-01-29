@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <h1>Trainers</h1>
+    
+    <ul>
+        {% for trainer in trainers %}
+                <h2><a href="{% url 'trainer_detail' trainer.id %}">{{ trainer.name }}</a></h2>
+           
+        {% endfor %}
+    </ul>
+</body>
+{% endblock content %}
