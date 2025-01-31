@@ -3,11 +3,10 @@
 
 {% block content %}
 
-<h1><a href="{% url 'videos' %}" class="vid_btn">+ Add Video</a></h1>
-
 {% if videos %}
     <div class="video-gallery">
         {% for video in videos %}
+        <br>
             <h2>{{ video.title }}</h2>
             {% if video.description %}
             <p class="p_vid">{{ video.description }}</p>
@@ -22,5 +21,5 @@
 {% else %}
     <p>No videos available.</p>
 {% endif %}
-
+    <h1><a href="{% url 'video_list' %}" class="vid_btn">+ Add Video</a></h1>
 {% endblock %}

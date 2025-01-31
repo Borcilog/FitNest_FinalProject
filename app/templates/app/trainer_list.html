@@ -6,7 +6,7 @@
     
     <ul>
         {% for trainer in trainers %}
-                <h2><a href="{% url 'trainer_detail' trainer.id %}">{{ trainer.name }}</a></h2>
+                <h2>•<a href="{% url 'trainer_detail' trainer.id %}">{{ trainer.name }}</a></h2>
            
         {% endfor %}
     </ul>

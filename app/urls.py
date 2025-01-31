@@ -1,8 +1,9 @@
 from django.urls import path
 from .views import (HomePageView, AboutPageView, LoginPageView, LogoutPageView, BlogListView, 
                     BlogDetailView,BlogCreateView,BlogUpdateView,
-                    BlogDeleteView,VideoCreateView,VideoListView,TrainerListView,
-                    TrainerDetailView,ClassCategoryListView,ClassCategoryDetailView )
+                    BlogDeleteView,VideoCreateView,VideoListView,MembershipPlanListView,TrainerListView,
+                    TrainerDetailView,ClassCategoryListView,ClassCategoryDetailView, ScheduleView, ScheduleSuccessView
+)
 from . import views
 
 urlpatterns = [
@@ -22,7 +23,7 @@ urlpatterns = [
     path('videos/', VideoListView.as_view(), name='videos'),
     path('video/Upload', VideoCreateView.as_view(), name='video_list'),
     
-    path("plans/", views.MembershipPlanListView, name="membership_plan_list"),
+    path('plans/', MembershipPlanListView.as_view(), name='membership_plan_list'),
     
     path('trainers/', TrainerListView.as_view(), name='trainer_list'),
     path('trainers/<int:pk>/', TrainerDetailView.as_view(), name='trainer_detail'),    
@@ -30,8 +31,8 @@ urlpatterns = [
     path("categories/", ClassCategoryListView.as_view(), name="class_category_list"),
     path('categories/<int:pk>/', ClassCategoryDetailView.as_view(), name='class_category_detail'),
     
-    path('schedule/', views.schedule_view, name='schedule'),
-    path('schedule/success/', views.schedule_success, name='schedule_success'),
+    path('schedule/', ScheduleView.as_view(), name='schedule'),
+    path('schedule/success/', ScheduleSuccessView.as_view(), name='schedule_success'),
     
     
 ]
